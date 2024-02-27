@@ -63,6 +63,8 @@ let updateData = () => {
   third.innerHTML = message_clients;
   fourth.innerHTML = message_sales;
 
+  console.log(listOfElements)
+
 }
 updateData()
 
@@ -93,15 +95,31 @@ let cambiosPercent = () => {
     let [ tabla1, tabla2, tabla3, tabla4 ] = cambios
     
     let {valor_previo: valor_previo1, valor_actual: valor_actual1, mensaje_tiempo: mensaje_tiempo1} = tabla1
-    
-    porcentaje_de_cambio1 = (valor_actual1 - valor_previo1)*100/valor_previo1
-    mensaje_tabla1 = `<p class="mb-0"><span class="text-success text-sm font-weight-bolder" ${porcentaje_de_cambio1} </span>than last week</p>` 
-    let listOfElements = document.getElementsByClassName('card-footer.p-3')
+    let {valor_previo: valor_previo2, valor_actual: valor_actual2, mensaje_tiempo: mensaje_tiempo2} = tabla2
+    let {valor_previo: valor_previo3, valor_actual: valor_actual3, mensaje_tiempo: mensaje_tiempo3} = tabla3
+    let {valor_previo: valor_previo4, valor_actual: valor_actual4, mensaje_tiempo: mensaje_tiempo4} = tabla4
+
+    let porcentaje_de_cambio1 = parseFloat(((valor_actual1 - valor_previo1) * 100 / valor_previo1).toFixed(2)) + "%" + " "
+    let porcentaje_de_cambio2 = parseFloat(((valor_actual2 - valor_previo2) * 100 / valor_previo2).toFixed(2)) + "%" + " "
+    let porcentaje_de_cambio3 = parseFloat(((valor_actual3 - valor_previo3) * 100 / valor_previo3).toFixed(2)) + "%" + " "
+    let porcentaje_de_cambio4 = parseFloat(((valor_actual4 - valor_previo4) * 100 / valor_previo4).toFixed(2)) + "%" + " "
+
+    let mensaje_tabla1 = `<p class="mb-0"><span class="text-success text-sm font-weight-bolder">${porcentaje_de_cambio1}</span>${ mensaje_tiempo1}</p>` 
+    let mensaje_tabla2 = `<p class="mb-0"><span class="text-success text-sm font-weight-bolder">${porcentaje_de_cambio2} </span>${mensaje_tiempo2}</p>`
+    let mensaje_tabla3 = `<p class="mb-0"><span class="text-success text-sm font-weight-bolder">${porcentaje_de_cambio3} </span>${mensaje_tiempo3}</p>`
+    let mensaje_tabla4 = `<p class="mb-0"><span class="text-success text-sm font-weight-bolder">${porcentaje_de_cambio4} </span>${mensaje_tiempo4}</p>`
+
+    let listOfElements = document.getElementsByClassName('card-footer p-3')
 
     console.log(mensaje_tabla1)
     console.log(listOfElements)
-    let [card1, card2, card3, card4] = listOfElements
-    
+    let [element1, element2, element3, element4] = listOfElements
+
+    element1.innerHTML = mensaje_tabla1
+    element2.innerHTML = mensaje_tabla2
+    element3.innerHTML = mensaje_tabla3
+    element4.innerHTML = mensaje_tabla4
+
     
 
 
