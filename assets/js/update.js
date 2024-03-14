@@ -114,7 +114,8 @@ let cambiosPercent = () => {
     console.log(mensaje_tabla1)
     console.log(listOfElements)
     let [element1, element2, element3, element4] = listOfElements
-
+    
+    
     element1.innerHTML = mensaje_tabla1
     element2.innerHTML = mensaje_tabla2
     element3.innerHTML = mensaje_tabla3

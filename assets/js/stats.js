@@ -247,5 +247,18 @@ let loadData = () => {
     let newData = [100, 80, 60, 40, 20, 10, 1];
     chart1.data.datasets[0].data = newData
 
+    let newcolor = "rgba(255, 213, 235, 0.8)"
+    let secondcolor = 'rgba(154, 229, 167, 0.8)'
+    let barcolor = 'rgba(255, 160, 210, 0.8)'
+    let barcolor2 = 'rgba(167, 253, 145, 0.8)'
+    chart1.options.scales.y.grid.color = newcolor
+    chart1.options.scales.x.grid.color = newcolor
+
+    chart2.options.scales.x.grid.color = secondcolor
+    chart2.options.scales.y.grid.color = secondcolor
+
+    chart1.data.datasets[0].backgroundColor = barcolor
+    chart2.data.datasets[0].backgroundColor = barcolor
+
 }
 loadData()
